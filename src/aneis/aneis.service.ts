@@ -2,7 +2,7 @@ import { Repository } from 'typeorm';
 import { Injectable, Inject } from '@nestjs/common';
 import { Anel } from './anel.entity';
 import { Portador } from './../portadores/portador.entity';
-import { CreateAnelDto } from './dto/crerateAnelDto';
+import { CreateAnelDto } from './dto/createAnelDto';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
