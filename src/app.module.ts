@@ -3,9 +3,9 @@ import { ConfigModule } from '@nestjs/config';
 import { AneisModule } from './aneis/aneis.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
-import { JwtModule } from '@nestjs/jwt';
 import { UserModule } from './user/user.module';
 import { ConfigService } from '@nestjs/config';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
@@ -28,11 +28,8 @@ import { ConfigService } from '@nestjs/config';
       inject: [ConfigService],
     }),
     AuthModule,
-    // JwtModule.register({
-    //   secret: configService.get<string>('JWT_SECRET'),
-    //   signOptions: { expiresIn: '1h' },
-    // }),
     UserModule,
+    AneisModule,
   ],
 })
 export class AppModule {}

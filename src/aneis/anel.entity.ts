@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/user/user.entity';
+import { Entity, Column, PrimaryGeneratedColumn, ManyToMany } from 'typeorm';
 
 @Entity('aneis')
 export class Anel {
@@ -11,8 +12,8 @@ export class Anel {
   @Column()
   poder: string;
 
-  @Column()
-  portador: string;
+  @ManyToMany(() => User, (user) => user.aneis)
+  portador: User[];
 
   @Column()
   forjadoPor: string;

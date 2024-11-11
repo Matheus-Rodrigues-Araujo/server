@@ -11,10 +11,6 @@ export class CreateAnelDto {
 
   @IsString()
   @IsNotEmpty()
-  portador: string;
-
-  @IsString()
-  @IsNotEmpty()
   forjadoPor: string;
 
   @IsUrl()
