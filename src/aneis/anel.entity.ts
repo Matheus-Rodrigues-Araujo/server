@@ -1,16 +1,9 @@
-import {
-  Entity,
-  PrimaryGeneratedColumn,
-  Column,
-  ManyToMany,
-  JoinTable,
-} from 'typeorm';
-import { Portador } from '../portadores/portador.entity';
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity('aneis')
 export class Anel {
-  @PrimaryGeneratedColumn("uuid")
-  id: string;
+  @PrimaryGeneratedColumn()
+  id: number;
 
   @Column()
   nome: string;
@@ -18,9 +11,8 @@ export class Anel {
   @Column()
   poder: string;
 
-  @ManyToMany(() => Portador, (p) => p.aneis)
-  @JoinTable()
-  portador: Portador[];
+  @Column()
+  portador: string;
 
   @Column()
   forjadoPor: string;

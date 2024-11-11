@@ -1,9 +1,23 @@
-import { Portador } from 'src/portadores/portador.entity';
+import { IsString, IsNotEmpty, IsUrl } from 'class-validator';
 
 export class CreateAnelDto {
+  @IsString()
+  @IsNotEmpty()
   nome: string;
+
+  @IsString()
+  @IsNotEmpty()
   poder: string;
-  portador: Portador[];
+
+  @IsString()
+  @IsNotEmpty()
+  portador: string;
+
+  @IsString()
+  @IsNotEmpty()
   forjadoPor: string;
+
+  @IsUrl()
+  @IsNotEmpty()
   imagem: string;
 }
