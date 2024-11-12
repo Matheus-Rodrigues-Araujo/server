@@ -1,11 +1,8 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { AneisModule } from './aneis/aneis.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthModule } from './auth/auth.module';
-import { UserModule } from './user/user.module';
 import { ConfigService } from '@nestjs/config';
-import { JwtModule } from '@nestjs/jwt';
+import { RingsModule } from './rings/rings.module';
 
 @Module({
   imports: [
@@ -27,9 +24,7 @@ import { JwtModule } from '@nestjs/jwt';
       }),
       inject: [ConfigService],
     }),
-    AuthModule,
-    UserModule,
-    AneisModule,
+    RingsModule,
   ],
 })
 export class AppModule {}
